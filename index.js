@@ -1,19 +1,19 @@
-// const express = require ('express');
-// const app = express();
-//const connectDB = require('');
+const express = require ('express');
+const app = express();
+const connectDB = require('./service/bd');
 
-// const dotenv = require('dotenv');
-// dotenv.config();
+const dotenv = require('dotenv');
+dotenv.config();
 
-//connectDB();
+connectDB();
 
-// app.use(express.json({ extended: true }));
+app.use(express.json({ extended: true }));
 
-//const PORT = process.env.SERVER_PORT || 4000
+const PORT = process.env.SERVER_PORT || 4000
 
 // app.use('/api/tests',require('./routes/tests'));
 
-// app.listen(PORT, () => {
-//     console.log(`Server escuchando en puerto ${PORT}`)
-// })
+app.listen(PORT, () => {
+    console.log(`Server escuchando en puerto ${PORT}`)
+})
 
