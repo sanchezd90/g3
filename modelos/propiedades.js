@@ -1,12 +1,6 @@
 const mongoose = require('mongoose');
 
-const propiedadesSchema = mongoose.Schema({
-    _id:{
-        type:mongoose.Schema.Types.ObjectId,
-        require: true,
-        trim: true,
-        unique: true,       
-    },
+const propiedadesSchema = mongoose.Schema({    
     tipo:{
         type: String,
         require: true,
@@ -38,7 +32,7 @@ const propiedadesSchema = mongoose.Schema({
         trim: true
     },    
     imagenes:{
-        type: string,
+        type: String,
         require: true,
         trim: true
     },    
