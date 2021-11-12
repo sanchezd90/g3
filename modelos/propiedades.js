@@ -1,46 +1,46 @@
 const mongoose = require('mongoose');
 
-const propiedadesSchema = mongoose.Schema({    
-    tipo:{
+const propiedadesSchema = mongoose.Schema({
+    descripcion: {
         type: String,
         require: true,
         trim: true
-    },    
-    descripcion:{
+    },
+    tipo: {
         type: String,
         require: true,
         trim: true
-    },    
-    zona:{
+    },
+    zona: {
         type: String,
         require: true,
         trim: true
-    },    
-    ciudad:{
+    },
+    ciudad: {
         type: String,
         require: true,
         trim: true
-    },    
-    habitaciones:{
+    },
+    habitaciones: {
         type: Number,
         require: true,
         trim: true
-    },    
-    estacionamiento:{
+    },
+    estacionamiento: {
         type: Boolean,
         require: true,
         trim: true
-    },    
-    imagenes:{
+    },
+    imagenes: {
         type: String,
         require: true,
         trim: true
-    },    
-    precio:{
+    },
+    precio: {
         type: Number,
         require: true,
         trim: true
-    }   
+    }
 });
 
 module.exports = mongoose.model('propiedades', propiedadesSchema);
