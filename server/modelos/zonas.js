@@ -17,7 +17,7 @@ const propiedadesSchema = new mongoose.Schema({
         trim: true
     },
     zona4: {
-        type: Number,
+        type: String,
         require: true,
         trim: true
     },
