@@ -24,4 +24,4 @@ const propiedadesSchema = new mongoose.Schema({
     
 });
 
-module.exports = mongoose.model('propiedades', propiedadesSchema);
+module.exports = mongoose.model('empresas', empresasSchema);
