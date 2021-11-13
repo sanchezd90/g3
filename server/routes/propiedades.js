@@ -1,12 +1,13 @@
 const express = require ('express');
 const router = express.Router();
-const {getAll} = require ('../controladores/propiedades')
+const {traerTodos, crear} = require ('../controladores/propiedades')
 
-router.post('/crear',    
-    
+router.post('/crear',
+    crear        
 )
+
 router.get('/propiedades',    
-    getAll
+    traerTodos
 )
 router.get('/propiedad/:id',    
     

@@ -11,13 +11,18 @@ const propiedadesSchema = mongoose.Schema({
         require: true,
         trim: true
     },
+    ubicacion: {
+        type: String,
+        require: true,
+        trim: true
+    },
     habitaciones: {
         type: Number,
         require: true,
         trim: true
     },
     estacionamiento: {
-        type: Boolean,
+        type: String,
         require: true,
         trim: true
     },
