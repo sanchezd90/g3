@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-const propiedadesSchema = mongoose.Schema({
+const propiedadesSchema = new mongoose.Schema({
     zona1: {
         type: String,
         require: true,
