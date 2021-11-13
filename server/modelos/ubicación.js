@@ -12,12 +12,12 @@ const propiedadesSchema = new mongoose.Schema({
         trim: true
     },
     estrato: {
-        type: String,
+        type: Number,
         require: true,
         trim: true
     },
     zona: {
-        type: Number,
+        type: String,
         require: true,
         trim: true
     },
@@ -28,7 +28,7 @@ const propiedadesSchema = new mongoose.Schema({
     },
     
     codigo_postal: {
-        type: String,
+        type: Number,
         require: true,
         trim: true
     },
