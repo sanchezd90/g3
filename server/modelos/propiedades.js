@@ -11,12 +11,7 @@ const propiedadesSchema = mongoose.Schema({
         require: true,
         trim: true
     },
-    zona: {
-        type: String,
-        require: true,
-        trim: true
-    },
-    ciudad: {
+    ubicacion: {
         type: String,
         require: true,
         trim: true
@@ -27,7 +22,7 @@ const propiedadesSchema = mongoose.Schema({
         trim: true
     },
     estacionamiento: {
-        type: Boolean,
+        type: String,
         require: true,
         trim: true
     },
@@ -43,4 +38,4 @@ const propiedadesSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('propiedades', propiedadesSchema);
+module.exports = mongoose.model('Propiedades', propiedadesSchema);
