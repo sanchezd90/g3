@@ -26,6 +26,12 @@ const propiedadesSchema = mongoose.Schema({
         require: true,
         trim: true
     },
+    ubicacion: {
+        type: String,
+        require: true,
+        trim: true
+    },
+    
     imagenes: {
         type: String,
         require: true,
@@ -38,4 +44,4 @@ const propiedadesSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Propiedades', propiedadesSchema);
+module.exports = mongoose.model('propiedades', propiedadesSchema);
