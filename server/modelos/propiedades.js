@@ -26,11 +26,6 @@ const propiedadesSchema = mongoose.Schema({
         require: true,
         trim: true
     },
-    ubicacion: {
-        type: String,
-        require: true,
-        trim: true
-    },
     
     imagenes: {
         type: String,
