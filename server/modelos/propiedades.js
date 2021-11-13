@@ -11,16 +11,6 @@ const propiedadesSchema = mongoose.Schema({
         require: true,
         trim: true
     },
-    zona: {
-        type: String,
-        require: true,
-        trim: true
-    },
-    ciudad: {
-        type: String,
-        require: true,
-        trim: true
-    },
     habitaciones: {
         type: Number,
         require: true,
@@ -31,6 +21,12 @@ const propiedadesSchema = mongoose.Schema({
         require: true,
         trim: true
     },
+    ubicacion: {
+        type: String,
+        require: true,
+        trim: true
+    },
+    
     imagenes: {
         type: String,
         require: true,
