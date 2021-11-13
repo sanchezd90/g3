@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const propiedadesSchema = mongoose.Schema({
+const propiedadesSchema = new mongoose.Schema({
     barrio: {
         type: String,
         require: true,
