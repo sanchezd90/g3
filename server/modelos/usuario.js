@@ -2,12 +2,10 @@ var mongoose = require('mongoose');
 
 const userscheme=new mongoose.Schema(
 {
-      cedula: {
+      user_id: {
          type: String
       },
-      nombre: {
-          type: String
-      },
+     
       password: {
           type: String
       }
