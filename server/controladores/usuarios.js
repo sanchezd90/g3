@@ -48,4 +48,18 @@ const editar = async (req,res) => {
   }     
 } 
 
-  module.exports = {traerTodos, traerPorId, crear, editar}
+const eliminar = async (req,res) => {
+  try{    
+    const id = req.params.id;            
+    const usuario = req.body;
+    delete usuario["_id"];       
+    const response = await Usuario.findByIdAndDelete(id);    
+    res.status(200).json(response)
+      
+  }catch(error){
+    console.log(error);
+    res.status(500).send("update error")  
+  }     
+} 
+
+  module.exports = {traerTodos, traerPorId, crear, editar, eliminar}
