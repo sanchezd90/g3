@@ -3,6 +3,7 @@ Número de Grupo: 16
 Nombre de Equipo: Quickstarters
 
 Integrantes y Roles:
+
 Daniel Sánchez Rueda - Líder de equipo
 
 Myriam Roque Vasquez  - Diseñador de Software
