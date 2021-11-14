@@ -1,7 +1,7 @@
 const Usuario = require('../modelos/usuario')
 
 const traerTodos = async (req,res) => {
-    try{
+    try{      
       const all = await Usuario.find({});
       console.log(all)
       res.status(200).json(all);
