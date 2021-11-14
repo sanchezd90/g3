@@ -30,7 +30,7 @@ const crear = async (req,res) => {
       
   }catch(error){
     console.log(error);
-    res.status(400).send("Error en el registro de propiedad")  
+    res.status(500).json({'error':error});
   }    
 } 
 
@@ -44,7 +44,7 @@ const editar = async (req,res) => {
       
   }catch(error){
     console.log(error);
-    res.status(500).send("update error")  
+    res.status(500).json({'error':error});
   }     
 } 
 
@@ -58,7 +58,7 @@ const eliminar = async (req,res) => {
       
   }catch(error){
     console.log(error);
-    res.status(500).send("update error")  
+    res.status(500).json({'error':error});
   }     
 } 
 
