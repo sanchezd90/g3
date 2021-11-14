@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const propiedadesSchema = new mongoose.Schema({
+const propiedadSchema = new mongoose.Schema({
     descripcion: {
         type: String,
         require: true,
@@ -39,4 +39,4 @@ const propiedadesSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('propiedades', propiedadesSchema);
+module.exports = mongoose.model('propiedades', propiedadSchema);
