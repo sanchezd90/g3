@@ -1,6 +1,6 @@
 const express = require ('express');
 const router = express.Router();
-const {traerTodos, crear} = require ('../controladores/usuarios')
+const {traerTodos, traerPorId, crear, editar} = require ('../controladores/usuarios')
 
 router.post('/crear',
     crear        
@@ -9,13 +9,16 @@ router.post('/crear',
 router.get('/traer',    
     traerTodos
 )
+
 router.get('/traer/:id',    
-    
+    traerPorId
 )
-router.post('/editar/:id',    
-    
+
+router.post('/editar/',    
+    editar
 )
-router.post('/eliminar/:id',    
+
+router.post('/eliminar/',    
     
 )
 

@@ -12,10 +12,10 @@ router.get('/traer',
 router.get('/traer/:id',    
     
 )
-router.post('/editar/:id',    
+router.post('/editar/',    
     
 )
-router.post('/eliminar/:id',    
+router.post('/eliminar/',    
     
 )
 
