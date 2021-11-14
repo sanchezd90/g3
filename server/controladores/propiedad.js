@@ -1,8 +1,8 @@
-const Propiedades = require('../modelos/propiedades')
+const Propiedad = require('../modelos/propiedad')
 
 const traerTodos = async (req,res) => {
     try{
-      const all = await Propiedades.find({});
+      const all = await Propiedad.find({});
       console.log(all)
       res.status(200).json(all);
     }catch(error){
@@ -13,7 +13,7 @@ const traerTodos = async (req,res) => {
 const crear = async (req,res) => {
   try{
     const datos = req.body;              
-    propiedad = new Propiedades(datos);
+    propiedad = new Propiedad(datos);
     await propiedad.save()
     res.status(200).json(propiedad)
       
@@ -26,7 +26,7 @@ const crear = async (req,res) => {
 //TRAER POR ID
 // const getAll = async (req,res) => {
 //     try{
-//       const all = await Propiedades.find({});
+//       const all = await Propiedad.find({});
 //       console.log(all)
 //       res.status(200).json(all);
 //     }catch(error){
@@ -37,7 +37,7 @@ const crear = async (req,res) => {
 //ACTUALIZAR
 // const getAll = async (req,res) => {
 //     try{
-//       const all = await Propiedades.find({});
+//       const all = await Propiedad.find({});
 //       console.log(all)
 //       res.status(200).json(all);
 //     }catch(error){
@@ -48,7 +48,7 @@ const crear = async (req,res) => {
 //ELIMINAR
 // const getAll = async (req,res) => {
 //     try{
-//       const all = await Propiedades.find({});
+//       const all = await Propiedad.find({});
 //       console.log(all)
 //       res.status(200).json(all);
 //     }catch(error){

@@ -1,20 +1,18 @@
 var mongoose = require('mongoose');
 
-const userscheme=new mongoose.Schema(
+const usuarioScheme=new mongoose.Schema(
 {
-      cedula: {
+      user_id: {
          type: String
       },
-      nombre: {
-          type: String
-      },
+     
       password: {
           type: String
       }
 }
 
 )
-module.exports= mongoose.model('usuario', userscheme)
+module.exports= mongoose.model('usuario', usuarioScheme)
 
 
 
