@@ -25,8 +25,8 @@ const crear = async (req,res) => {
   try{
     const datos = req.body;              
     propiedad = new Usuario(datos);
-    await propiedad.save()
-    res.status(200).json(propiedad)
+    await usuario.save()
+    res.status(200).json(usuario)
       
   }catch(error){
     console.log(error);
