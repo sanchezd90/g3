@@ -13,6 +13,7 @@ const PORT = process.env.SERVER_PORT || 4000
 
 app.use('/api/propiedades',require('./routes/propiedades'));
 app.use('/api/usuarios',require('./routes/usuarios'));
+app.use('/api/ubicacion',require('./routes/ubicacion'));
 
 app.listen(PORT, () => {
     console.log(`Server escuchando en puerto ${PORT}`)
