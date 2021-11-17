@@ -35,4 +35,4 @@ const ubicacionSchema = new mongoose.Schema({
     
 });
 
-module.exports = mongoose.model('ubicacion', ubicacionSchema);
+module.exports = mongoose.model('ubicaciones', ubicacionSchema);

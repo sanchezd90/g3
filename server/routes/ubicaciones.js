@@ -1,6 +1,6 @@
 const express = require ('express');
 const router = express.Router();
-const {traerTodos, traerPorId, crear, editar, eliminar} = require ('../controladores/usuarios')
+const {traerTodos, traerPorId, crear, editar, eliminar} = require ('../controladores/ubicaciones')
 
 router.post('/crear',
     crear        

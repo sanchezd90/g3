@@ -1,6 +1,6 @@
 const express = require ('express');
 const router = express.Router();
-const {traerTodos, traerPorId, crear, editar, eliminar} = require ('../controladores/propiedad')
+const {traerTodos, traerPorId, crear, editar, eliminar} = require ('../controladores/propiedades')
 
 router.post('/crear',
     crear        
