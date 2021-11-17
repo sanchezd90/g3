@@ -1,15 +1,5 @@
 const Propiedad = require('../modelos/propiedad')
 
-const traerTodos = async (req,res) => {
-    try{
-      const all = await Propiedad.find({});
-      console.log(all)
-      res.status(200).json(all);
-    }catch(error){
-      res.status(500).json({'error':error});
-    }
-  }
-
 const crear = async (req,res) => {
   try{
     const datos = req.body;              
@@ -19,41 +9,57 @@ const crear = async (req,res) => {
       
   }catch(error){
     console.log(error);
-    res.status(400).send("Error en el registro de propiedad")  
+    res.status(500).send("Error en el registro de propiedad")  
   }    
+}
+
+const traerTodos = async (req,res) => {
+    try{
+      const all = await Propiedad.find({});
+      console.log(all)
+      res.status(200).json(all);
+    }catch(error){
+      res.status(500).json({'error':error});
+    }
+  } 
+
+const traerPorId = async (req,res) => {
+  try{  
+    const id = req.params.id;    
+    const propiedad = await Propiedad.findById(id);
+    console.log(propiedad)
+    res.status(200).json(propiedad);
+  }catch(error){
+    res.status(500).json({'error':error});
+  }
+}
+
+const editar = async (req,res) => {
+  try{    
+    const {_id} = req.body;            
+    const propiedad = req.body;
+    delete propiedad["_id"];       
+    const response = await Propiedad.replaceOne({_id:_id},propiedad);    
+    res.status(200).json(response)
+      
+  }catch(error){
+    console.log(error);
+    res.status(500).json({'error':error});
+  }     
 } 
 
-//TRAER POR ID
-// const getAll = async (req,res) => {
-//     try{
-//       const all = await Propiedad.find({});
-//       console.log(all)
-//       res.status(200).json(all);
-//     }catch(error){
-//       res.status(500).json({'error':error});
-//     }
-//   }
+const eliminar = async (req,res) => {
+  try{    
+    const id = req.params.id;            
+    const propiedad = req.body;
+    delete propiedad["_id"];       
+    const response = await Propiedad.findByIdAndDelete(id);    
+    res.status(200).json(response)
+      
+  }catch(error){
+    console.log(error);
+    res.status(500).json({'error':error});
+  }     
+} 
 
-//ACTUALIZAR
-// const getAll = async (req,res) => {
-//     try{
-//       const all = await Propiedad.find({});
-//       console.log(all)
-//       res.status(200).json(all);
-//     }catch(error){
-//       res.status(500).json({'error':error});
-//     }
-//   }
-
-//ELIMINAR
-// const getAll = async (req,res) => {
-//     try{
-//       const all = await Propiedad.find({});
-//       console.log(all)
-//       res.status(200).json(all);
-//     }catch(error){
-//       res.status(500).json({'error':error});
-//     }
-//   }
-
-  module.exports = {traerTodos, crear}
+  module.exports = {traerTodos, crear, traerPorId, editar, eliminar }
