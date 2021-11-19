@@ -34,6 +34,52 @@ const traerPorId = async (req,res) => {
   }
 }
 
+const traerPorTipo = async (req,res) => {
+  try{  
+    const tipo = req.params.tipo;    
+    const propiedad = await Propiedad.find({ tipo: `${tipo}`});
+    console.log(propiedad)
+    res.status(200).json(propiedad);
+  }catch(error){
+    res.status(500).json({'error':error});
+  }
+}
+
+const traerPorEstacionamiento = async (req,res) => {
+  try{  
+    const estacionamiento = req.params.estacionamiento;    
+    const propiedad = await Propiedad.find({ estacionamiento });
+    console.log(propiedad)
+    res.status(200).json(propiedad);
+  }catch(error){
+    res.status(500).json({'error':error});
+  }
+}
+
+const traerPorHabitaciones = async (req,res) => {
+  try{  
+    const min = req.params.min;        
+    const max = req.params.max;        
+    const propiedad = await Propiedad.find({ habitaciones: {$gte: min, $lte: max}});
+    console.log(propiedad)
+    res.status(200).json(propiedad);
+  }catch(error){
+    res.status(500).json({'error':error});
+  }
+}
+
+const traerPorPrecio = async (req,res) => {
+  try{  
+    const min = req.params.min;        
+    const max = req.params.max;        
+    const propiedad = await Propiedad.find({ precio: {$gte: min, $lte: max}});
+    console.log(propiedad)
+    res.status(200).json(propiedad);
+  }catch(error){
+    res.status(500).json({'error':error});
+  }
+}
+
 const editar = async (req,res) => {
   try{    
     const {_id} = req.body;            
@@ -62,4 +108,4 @@ const eliminar = async (req,res) => {
   }     
 } 
 
-  module.exports = {traerTodos, crear, traerPorId, editar, eliminar }
+  module.exports = {traerTodos, crear, traerPorId, traerPorTipo, traerPorHabitaciones, traerPorPrecio, traerPorEstacionamiento, editar, eliminar }

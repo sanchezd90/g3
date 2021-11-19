@@ -22,7 +22,7 @@ const propiedadSchema = new mongoose.Schema({
         trim: true
     },
     estacionamiento: {
-        type: String,
+        type: Boolean,
         require: true,
         trim: true
     },
