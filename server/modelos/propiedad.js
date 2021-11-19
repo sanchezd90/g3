@@ -12,7 +12,7 @@ const propiedadSchema = new mongoose.Schema({
         trim: true
     },
     ubicacion: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
         require: true,
         trim: true
     },
