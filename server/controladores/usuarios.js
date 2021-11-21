@@ -34,6 +34,17 @@ const traerPorId = async (req,res) => {
     }
   }
 
+  const traerPorUserId = async (req,res) => {
+    try{  
+      const user_id = req.params.user_id;        
+      const all = await Usuario.find({user_id: user_id});
+      console.log(all)
+      res.status(200).json(all);
+    }catch(error){
+      res.status(500).json({'error':error});
+    }
+  }
+
 const editar = async (req,res) => {
   try{    
     const {_id} = req.body;            
@@ -62,4 +73,4 @@ const eliminar = async (req,res) => {
   }     
 } 
 
-  module.exports = {traerTodos, traerPorId, crear, editar, eliminar}
+  module.exports = {traerTodos, traerPorId, traerPorUserId, crear, editar, eliminar}
