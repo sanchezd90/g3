@@ -5,6 +5,10 @@ import { BaseService } from './base.service';
   providedIn: 'root',
 })
 export class PropiedadesService extends BaseService {
+  crear(params:any) {
+    this.setEndPoint(`propiedades/crear`);
+    return this.post(params);
+  }
   traerTodos() {
     this.setEndPoint(`propiedades/traer`);
     return this.get();

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root'
@@ -7,10 +7,10 @@ import { HttpClient } from '@angular/common/http';
   export class BaseService {
   
     baseUrl: string = 'http://localhost:4000/api';
-    endPoint: string = '';
-  
-    constructor(private http: HttpClient) { }
-  
+    endPoint: string = '';    
+
+    constructor(private http: HttpClient) { }    
+
     setEndPoint(endpoint: string) {
       this.endPoint = endpoint;
     }
@@ -26,6 +26,14 @@ import { HttpClient } from '@angular/common/http';
     async get(){
       try {
         return await this.http.get(`${this.baseUrl}/${this.endPoint}`).toPromise();
+      } catch (error) {
+        return console.log(error)
+      }
+    }
+  
+    async post(params:any){
+      try {        
+        return await this.http.post(`${this.baseUrl}/${this.endPoint}`, params).toPromise();
       } catch (error) {
         return console.log(error)
       }

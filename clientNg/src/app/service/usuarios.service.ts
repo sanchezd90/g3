@@ -5,6 +5,10 @@ import { BaseService } from './base.service';
   providedIn: 'root',
 })
 export class UsuariosService extends BaseService {
+  crear(params:any) {
+    this.setEndPoint(`usuarios/crear`);
+    return this.post(params);
+  }
   traerTodos() {
     this.setEndPoint(`usuarios/traer`);
     return this.get();
@@ -16,5 +20,5 @@ export class UsuariosService extends BaseService {
   traerPorUserId(user_id: any) {
     this.setEndPoint(`usuarios/traer/user_id/${user_id}`);
     return this.get();
-  }
+  }  
 }
