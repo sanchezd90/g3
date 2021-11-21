@@ -80,6 +80,22 @@ const traerPorPrecio = async (req,res) => {
   }
 }
 
+const filtrar = async (req,res) => {
+  try{  
+    const tipo = req.params.tipo;  
+    const precioMin = req.params.precioMin;        
+    const precioMax = req.params.precioMax;        
+    const habitacionesMin = req.params.habitacionesMin;        
+    const habitacionesMax = req.params.habitacionesMax;
+    const estacionamiento = req.params.estacionamiento;            
+    const propiedad = await Propiedad.find({ tipo:tipo, precio: {$gte: precioMin, $lte: precioMax}, habitaciones: {$gte: habitacionesMin, $lte: habitacionesMax}, estacionamiento: estacionamiento,  });
+    console.log(propiedad)
+    res.status(200).json(propiedad);
+  }catch(error){
+    res.status(500).json({'error':error});
+  }
+}
+
 const editar = async (req,res) => {
   try{    
     const {_id} = req.body;            
@@ -108,4 +124,4 @@ const eliminar = async (req,res) => {
   }     
 } 
 
-  module.exports = {traerTodos, crear, traerPorId, traerPorTipo, traerPorHabitaciones, traerPorPrecio, traerPorEstacionamiento, editar, eliminar }
+  module.exports = {traerTodos, crear, traerPorId, traerPorTipo, traerPorHabitaciones, traerPorPrecio, traerPorEstacionamiento, filtrar, editar, eliminar }
