@@ -33,11 +33,11 @@ router.get('/filtrar/:tipo/:precioMin/:precioMax/:habitacionesMin/:habitacionesM
     filtrar
 )
 
-router.post('/editar/',    
+router.post('/editar',    
     editar
 )
 
-router.post('/eliminar/:id',    
+router.post('/eliminar',    
     eliminar
 )
 

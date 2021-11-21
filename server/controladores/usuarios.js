@@ -61,10 +61,8 @@ const editar = async (req,res) => {
 
 const eliminar = async (req,res) => {
   try{    
-    const id = req.params.id;            
-    const usuario = req.body;
-    delete usuario["_id"];       
-    const response = await Usuario.findByIdAndDelete(id);    
+    const {_id} = req.body;                
+    const response = await Usuario.findByIdAndDelete({_id:_id});    
     res.status(200).json(response)
       
   }catch(error){

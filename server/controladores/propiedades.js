@@ -112,10 +112,8 @@ const editar = async (req,res) => {
 
 const eliminar = async (req,res) => {
   try{    
-    const id = req.params.id;            
-    const propiedad = req.body;
-    delete propiedad["_id"];       
-    const response = await Propiedad.findByIdAndDelete(id);    
+    const {_id} = req.body;                
+    const response = await Propiedad.findByIdAndDelete({_id:_id});    
     res.status(200).json(response)
       
   }catch(error){

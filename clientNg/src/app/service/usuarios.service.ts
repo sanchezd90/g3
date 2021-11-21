@@ -21,4 +21,12 @@ export class UsuariosService extends BaseService {
     this.setEndPoint(`usuarios/traer/user_id/${user_id}`);
     return this.get();
   }  
+  editar(params:any) {
+    this.setEndPoint(`usuarios/editar`);
+    return this.post(params);
+  }
+  eliminar(params:any) {
+    this.setEndPoint(`usuarios/eliminar`);
+    return this.post(params);
+  }
 }

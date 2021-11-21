@@ -46,4 +46,12 @@ export class PropiedadesService extends BaseService {
     );
     return this.get();
   }
+  editar(params:any) {
+    this.setEndPoint(`propiedades/editar`);
+    return this.post(params);
+  }
+  eliminar(params:any) {
+    this.setEndPoint(`propiedades/eliminar`);
+    return this.post(params);
+  }
 }

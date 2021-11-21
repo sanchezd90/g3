@@ -18,11 +18,11 @@ router.get('/traer/user_id/:user_id',
     traerPorUserId
 )
 
-router.post('/editar/',    
+router.post('/editar',    
     editar
 )
 
-router.post('/eliminar/:id',    
+router.post('/eliminar',    
     eliminar
 )
 
