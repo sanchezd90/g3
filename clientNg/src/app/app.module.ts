@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PropiedadesComponent } from './core/layout/propiedades/propiedades.component';
 import { UsuariosComponent } from './core/layout/usuarios/usuarios.component';
+import { AuthComponent } from './core/layout/auth/auth.component';
+import { RegistroUsuarioComponent } from './core/layout/registro-usuario/registro-usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PropiedadesComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    AuthComponent,
+    RegistroUsuarioComponent
   ],
   imports: [
     BrowserModule,
