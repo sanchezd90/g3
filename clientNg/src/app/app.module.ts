@@ -8,6 +8,12 @@ import { PropiedadesComponent } from './core/layout/propiedades/propiedades.comp
 import { UsuariosComponent } from './core/layout/usuarios/usuarios.component';
 import { AuthComponent } from './core/layout/auth/auth.component';
 import { RegistroUsuarioComponent } from './core/layout/registro-usuario/registro-usuario.component';
+import { NavbarComponent } from './core/layout/navbar/navbar.component';
+import { FooterComponent } from './core/layout/footer/footer.component';
+import { HomeComponent } from './core/layout/home/home.component';
+import { AcercaComponent } from './core/layout/acerca/acerca.component';
+import { LoginComponent } from './core/layout/login/login.component';
+import { RegistroComponent } from './core/layout/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +21,13 @@ import { RegistroUsuarioComponent } from './core/layout/registro-usuario/registr
     PropiedadesComponent,
     UsuariosComponent,
     AuthComponent,
-    RegistroUsuarioComponent
+    RegistroUsuarioComponent,
+    NavbarComponent,
+    FooterComponent,
+    HomeComponent,
+    AcercaComponent,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
