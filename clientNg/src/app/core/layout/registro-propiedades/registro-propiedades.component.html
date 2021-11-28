@@ -1,18 +1,5 @@
-<html ng-app="AppQuickstarters" id="AppQuickstarters">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" />
-    <title>Test</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="./conector.js"></script>
-
-</head>
-
-<body ng-controller="controlado">
-
-    {{msg}}
-
+<app-navbar></app-navbar>
+<body>    
     <a href="javascript:;" id="lbtnTest"> Llamar </a>
     <form>
         <div class="form-group">
@@ -29,12 +16,11 @@
             <label for="imagenes ">Imagenes</label><br>
             <input type="file " class="form-control input-lg text-center " placeholder="CHOOSEFILE " ng-model="formData.ubicaccion ">
             <label for="precio ">Precio</label><br>
-            <input type="int64 " class="form-control input-lg text-center " placeholder="Indique precio de la propiedad " ng-model="formData.precio "> {{todos}}
+            <input type="int64 " class="form-control input-lg text-center " placeholder="Indique precio de la propiedad " ng-model="formData.precio ">
 
         </div>
         <button class="btn btn-primary btn-lg " ng-click="RegistrarInmueble() ">Registrar</button>
     </form>
-
-
-
 </body>
+<app-footer></app-footer>
+

@@ -1,2 +1,19 @@
 <app-navbar></app-navbar>
+<body>
+    <form action="/authenticate" method='POST' class='registro'>
+        <H2>Login</H2>
+        <div class="section">
+            <div class="title">Usuario</div>
+            <div class="field"><input type="text" id="username" class="ingreso_datos" name="username"></div>
+        </div>
+        <div class="section">
+            <div class="title">Contraseña</div>
+            <div class="field"><input type="text" id="password" class="ingreso_datos" name="password"></div>
+        </div>
+        <div class="section">
+            <div class="button"><input class='boton' type="submit" value="Login"></div>
+            <div><a href="">Registrase</a></div>
+        </div>
+    </form>
+</body>
 <app-footer></app-footer>
