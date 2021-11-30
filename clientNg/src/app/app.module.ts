@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { AcercaComponent } from './core/layout/acerca/acerca.component';
 import { LoginComponent } from './core/layout/login/login.component';
 import { RegistroComponent } from './core/layout/registro/registro.component';
 import { RegistroPropiedadesComponent } from './core/layout/registro-propiedades/registro-propiedades.component';
+import { FiltroPropiedadesComponent } from './core/layout/filtro-propiedades/filtro-propiedades.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { RegistroPropiedadesComponent } from './core/layout/registro-propiedades
     AcercaComponent,
     LoginComponent,
     RegistroComponent,
-    RegistroPropiedadesComponent
+    RegistroPropiedadesComponent,
+    FiltroPropiedadesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

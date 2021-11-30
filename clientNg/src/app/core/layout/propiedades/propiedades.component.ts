@@ -1,21 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { PropiedadesService } from '../../../service/propiedades.service';
+import { Component, Input } from '@angular/core';
+import { Propiedad } from '../../../interfaces/propiedad'
 
 @Component({
   selector: 'app-propiedades',
   templateUrl: './propiedades.component.html',
   styleUrls: ['./propiedades.component.css']
 })
-export class PropiedadesComponent implements OnInit {
-
-  propiedades: any = [];
-
-  constructor(private service:PropiedadesService) { }
-  
-  async ngOnInit(){
-    const propiedades : any = await this.service.traerTodos();
-    this.propiedades = propiedades;
-    console.log(this.propiedades)
-  }
-
+export class PropiedadesComponent {     
+    @Input() prop!: Propiedad;     
 }

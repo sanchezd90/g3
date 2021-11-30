@@ -1,85 +1,19 @@
 <app-navbar></app-navbar>
 <div class="container d-flex">
   <div class="col-3">
-    <div class="card mx-auto my-5 rounded-3 filtro">
-      <h5 class="card-title mx-3 my-3">Filtrar</h5>
-      <div class="card-body">
-        <div class="input-group mb-3">
-          <div>
-            <label for="ubicacion" class="form-label">Ubicacion</label>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Ubicacion"
-              aria-label="ubicacion"
-            />
-          </div>
-          <div>
-            <label for="tipo" class="form-label">Tipo de inmueble</label>
-            <select class="form-select" aria-label="tipo">
-              <option selected value="1">Apartamento</option>
-              <option value="2">Casa</option>
-              <option value="3">Apartaestudio</option>
-            </select>
-          </div>
-          <div>
-            <label for="habitaciones" class="form-label">Habitaciones</label>
-            <div class="d-flex justify-content-around">
-              <input
-                type="text"
-                class="form-control input-filtro"
-                placeholder="min"
-                aria-label="habitaciones-min"
-              />
-              <input
-                type="text"
-                class="form-control input-filtro"
-                placeholder="max"
-                aria-label="habitaciones-max"
-              />
-            </div>
-            <div>
-              <label for="precio" class="form-label">Precio</label>
-              <div class="d-flex justify-content-around">
-                <input
-                  type="text"
-                  class="form-control input-filtro"
-                  placeholder="min"
-                  aria-label="precio-min"
-                />
-                <input
-                  type="text"
-                  class="form-control input-filtro"
-                  placeholder="max"
-                  aria-label="precio-max"
-                />
-              </div>
-            </div>
-            <div class="my-3">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value="false"
-                    id="flexCheckDefault"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Cuenta con estacionamiento
-                  </label>
-                </div>
-            </div>
-            <div>
-              <button type="submit" class="btn btn-primary w-100">
-                Filtrar
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <app-filtro-propiedades>      
+    </app-filtro-propiedades>
 </div>
 <div class="col-9">
-    <app-propiedades></app-propiedades>
+  <div class="mx-5 my-5">
+    <div class="card my-3">        
+        <app-propiedades 
+        *ngFor="let prop of propiedades"
+        [prop]="prop">
+      </app-propiedades>
+      </div>
+  </div>
+      
 </div>
 </div>
 <app-footer></app-footer>

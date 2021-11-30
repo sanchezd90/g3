@@ -1,0 +1,21 @@
+.input-group div{
+    width: 100%;
+    margin-bottom:5px;
+    margin-top:5px;
+}
+
+.input-filtro{
+    width: 35%;
+    height: 50px;
+    margin-bottom:5px;
+    margin-top:5px;    
+}
+
+.btn-primary {
+    background-color:#f50;
+    border-color: #f50
+}
+
+.filtro {
+    background-color:#e78e0938!important;
+}
