@@ -1,4 +1,6 @@
 import { Component} from '@angular/core';
+import { PropiedadesComponent } from '../propiedades/propiedades.component';
+import { Busqueda } from './busqueda'
 
 @Component({
   selector: 'app-filtro-propiedades',
@@ -8,6 +10,8 @@ import { Component} from '@angular/core';
 export class FiltroPropiedadesComponent{
 
   tipos = ['apartamento',"casa","apartaestudio"];
+
+  model = new Busqueda('','','','','','');
 
   submitted = false;
 
