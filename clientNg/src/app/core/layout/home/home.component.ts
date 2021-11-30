@@ -16,7 +16,9 @@ export class HomeComponent implements OnInit {
   precioMax: number = 100000000;      
   habitacionesMin: number = 0;  
   habitacionesMax: number = 10;      
-  estacionamiento: boolean = false;  
+  estacionamiento: boolean = false;
+  
+  hideNoResults = true;
 
   constructor(private service:PropiedadesService) { }
 
@@ -26,8 +28,8 @@ export class HomeComponent implements OnInit {
     console.log(this.propiedades)
   }
 
-  async filter() {
-    this.propiedades = await this.service.filtrar(this.tipo,this.precioMin,this.precioMax,this.habitacionesMin,this.habitacionesMax,this.estacionamiento);
+  updateProps(newArray:any) {    
+    this.propiedades = newArray    
   }
 
 }

@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container d-flex">
   <div class="col-3">
-    <app-filtro-propiedades>      
+    <app-filtro-propiedades (nuevaBusqueda)="updateProps($event)">      
     </app-filtro-propiedades>
 </div>
 <div class="col-9">
@@ -11,6 +11,7 @@
         *ngFor="let prop of propiedades"
         [prop]="prop">
       </app-propiedades>
+      <!-- <h4 [hidden]="hideNoResults">No hay resultados para esta búsqueda</h4> -->
       </div>
   </div>
       

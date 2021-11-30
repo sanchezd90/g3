@@ -1,25 +1,26 @@
 <div class="card mx-auto my-5 rounded-3 filtro">
     <h5 class="card-title mx-3 my-3">Filtrar</h5>
     <div class="card-body">
-        <form (ngSubmit)="onSubmit()" #propForm="ngForm">
+        <form (ngSubmit)="onSubmit()" #FiltroPropiedades="ngForm">
             <div class="form-group">
                 <label for="ubicacion" class="form-label">Ubicacion</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="ubicacion"
-                  [(ngModel)]="model.ubicacion" 
-                  name="ubicacion"
-                  #ubicacion="ngModel"
+                  id="ubicacion"                  
                   placeholder="Ubicacion"
                   aria-label="ubicacion"                                   
                 />
             </div>
             <div class="form-group">
                 <label for="tipo">Tipo</label>
-                <select class="form-control" id="tipo"                      
-                      [(ngModel)]="model.tipo" name="tipo"
-                      #tipo="ngModel">
+                <select 
+                class="form-control" 
+                id="tipo"                                            
+                [(ngModel)]="model.tipo" 
+                name="tipo"
+                #tipo="ngModel"                
+                >
                 <option *ngFor="let tipo of tipos" [value]="tipo">{{tipo}}</option>
               </select>
             </div>
@@ -30,20 +31,22 @@
                     type="text"
                     class="form-control input-filtro"
                     placeholder="min"
-                    id="habitaciones-min"
+                    id="habitacionesMin"
                     [(ngModel)]="model.habitacionesMin"
+                    name="habitacionesMin"
                     #habitacionesMin="ngModel" 
-                    aria-label="habitaciones-min"
+                    aria-label="habitacionesMin"
                     
                     />
                     <input
                     type="text"
                     class="form-control input-filtro"
                     placeholder="max"
-                    id="habitaciones-max"
+                    id="habitacionesMax"
                     [(ngModel)]="model.habitacionesMax"
+                    name="habitacionesMax"
                     #habitacionesMax="ngModel" 
-                    aria-label="habitaciones-max"
+                    aria-label="habitacionesMax"
                     
                     />
                 </div>
@@ -57,8 +60,9 @@
                     placeholder="min"
                     id="precio-min"
                     [(ngModel)]="model.precioMin"
+                    name="precioMin"
                     #precioMin="ngModel" 
-                    aria-label="precio-min"
+                    aria-label="precioMin"
                     
                     />
                     <input
@@ -67,8 +71,9 @@
                     placeholder="max"
                     id="precio-max"
                     [(ngModel)]="model.precioMax"
+                    name="precioMax"
                     #precioMax="ngModel" 
-                    aria-label="precio-max"
+                    aria-label="precioMax"
                     
                     />
                 </div>
@@ -81,6 +86,7 @@
                       value="false"
                       id="estacionamiento"
                       [(ngModel)]="model.estacionamiento"
+                      name="estacionamiento"
                       #estacionamiento="ngModel"                       
                     />
                     <label class="form-check-label" for="flexCheckDefault">
@@ -88,7 +94,7 @@
                     </label>
                   </div>                           
             </div>
-            <button type="submit" class="btn btn-success">Submit</button>                                     
+            <button type="submit" class="btn btn-primary" (click)="filter(FiltroPropiedades)">Submit</button>                                     
         </form>
       
     </div>

@@ -1,10 +1,10 @@
 export class Busqueda {
     constructor(        
-        tipo: string,
-        precioMin: string,   
-        precioMax: string,   
-        habitacionesMin: string,
-        habitacionesMax: string,
-        estacionamiento: string,               
+        public tipo: string,
+        public precioMin: string,   
+        public precioMax: string,   
+        public habitacionesMin: string,
+        public habitacionesMax: string,
+        public estacionamiento: string,               
     ) {}
   }
