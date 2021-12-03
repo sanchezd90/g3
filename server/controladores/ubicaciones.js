@@ -15,7 +15,15 @@ const crear = async (req,res) => {
 
 const traerTodos = async (req,res) => {
     try{
-      const all = await Ubicacion.find({});
+      const all = await Ubicacion.find({});      
+      res.status(200).json(all);
+    }catch(error){
+      res.status(500).json({'error':error});
+    }
+  } 
+const traerCiudades = async (req,res) => {
+    try{
+      const all = await Ubicacion.find().distinct('ciudad');
       console.log(all)
       res.status(200).json(all);
     }catch(error){
@@ -26,8 +34,16 @@ const traerTodos = async (req,res) => {
 const traerPorId = async (req,res) => {
   try{  
     const id = req.params.id;    
-    const ubicacion = await Ubicacion.findById(id);
-    console.log(ubicacion)
+    const ubicacion = await Ubicacion.findById(id);    
+    res.status(200).json(ubicacion);
+  }catch(error){
+    res.status(500).json({'error':error});
+  }
+}
+const traerPorCiudad = async (req,res) => {
+  try{  
+    const ciudad = req.params.ciudad;    
+    const ubicacion = await Ubicacion.find({ciudad:ciudad},{'_id':1});    
     res.status(200).json(ubicacion);
   }catch(error){
     res.status(500).json({'error':error});
@@ -62,4 +78,4 @@ const eliminar = async (req,res) => {
   }     
 } 
 
-module.exports = {traerTodos, crear, traerPorId, editar, eliminar }
+module.exports = {traerTodos, crear, traerPorId, traerCiudades, traerPorCiudad, editar, eliminar }

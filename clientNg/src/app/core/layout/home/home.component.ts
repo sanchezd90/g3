@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PropiedadesService } from '../../../service/propiedades.service';
 import { Propiedad } from '../../../interfaces/propiedad'
+import { UbicacionesService } from '../../../service/ubicaciones.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ import { Propiedad } from '../../../interfaces/propiedad'
 })
 export class HomeComponent implements OnInit {
 
-  propiedades: any = [];  
+  propiedades: any = []; 
+  ubicaciones: any = [];   
   ubicacion: string = '';
   tipo: string = '';  
   precioMin: number = 0;  
@@ -20,11 +22,14 @@ export class HomeComponent implements OnInit {
   
   hideNoResults = true;
 
-  constructor(private service:PropiedadesService) { }
+  constructor(private service:PropiedadesService, private ubicacionesService:UbicacionesService) { }
 
   async ngOnInit() {
     const propiedades : any = await this.service.traerTodos();
     this.propiedades = propiedades;
+    propiedades.map(async(propiedad: { ubicacion: any; })=>{
+      propiedad.ubicacion=await this.ubicacionesService.traerPorId(propiedad.ubicacion);
+    })
     console.log(this.propiedades)
   }
 
