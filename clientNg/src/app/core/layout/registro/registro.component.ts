@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from '../../../service/usuarios.service';
 import { Usuario } from './usuario'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -9,7 +10,7 @@ import { Usuario } from './usuario'
 })
 export class RegistroComponent implements OnInit {
 
-  constructor(private service:UsuariosService) { }
+  constructor(private service:UsuariosService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -34,7 +35,8 @@ export class RegistroComponent implements OnInit {
           password:password.value,
           email:email.value  
         });
-        console.log(response)    
+        console.log(response)
+        this.router.navigate(['/'])    
       }catch (error:any) {
         console.log(error)    
       }      
