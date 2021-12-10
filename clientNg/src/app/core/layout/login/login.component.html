@@ -1,19 +1,35 @@
 <app-navbar></app-navbar>
 <body>
-    <form action="/authenticate" method='POST' class='registro'>
-        <H2>Login</H2>
-        <div class="section">
-            <div class="title">Usuario</div>
-            <div class="field"><input type="text" id="username" class="ingreso_datos" name="username"></div>
-        </div>
-        <div class="section">
-            <div class="title">Contraseña</div>
-            <div class="field"><input type="text" id="password" class="ingreso_datos" name="password"></div>
-        </div>
-        <div class="section">
-            <div class="button"><input class='boton' type="submit" value="Login"></div>
-            <div><a href="">Registrase</a></div>
-        </div>
-    </form>
+    <div class='contenedor' style='height:610px; margin-top:20px'>
+        <form (ngSubmit)="onSubmit()" #InicioSesion="ngForm">
+            <H2>Login</H2>
+            <div class="input-field">
+                <div class="title">Usuario</div>
+                <div class="field"><input type="text" id="user_id"
+                    [(ngModel)]="model.user_id" 
+                    name="user_id"
+                    #user_id="ngModel"></div>
+            </div>
+            <div class="input-field">
+                <div class="title">Contraseña</div>
+                <div class="field"><input type="text" id="password"
+                    [(ngModel)]="model.password" 
+                    name="password"
+                    #password="ngModel"></div>
+            </div>
+            <div class="input-field">
+                <button type="submit" class="btn btn-primary" (click)="login(InicioSesion)">Iniciar Sesión</button>                                     
+            </div>
+            <div [hidden]='hidden'>
+                <p style='color:red'>Debe completar todos los campos</p>
+              </div>
+            <div *ngIf='passwordAlert'>
+                <p style='color:red'>Contraseña incorrecta</p>
+              </div>
+            <div *ngIf='userAlert'>
+                <p style='color:red'>El usuario ingresado no existe</p>
+              </div>
+        </form>
+    </div>
 </body>
 <app-footer></app-footer>
