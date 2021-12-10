@@ -1,39 +1,93 @@
 <app-navbar></app-navbar>
-<div class="container w-50 my-3">   
+<div class="container w-50 my-3" style='min-height:570px'>   
     <h2 class="text-center my-4">Registrar una propiedad</h2>     
-    <form>
+    <form (ngSubmit)="onSubmit()" #RegistroPropiedad="ngForm">
         <div class="form-group">
             <div class="my-2">
                 <label for=" descripcion ">Descripcion</label>
-                <input type="text " class="form-control input-lg text-center " placeholder="Despliegue reseña de la propiedad " id="descripcion " ng-model="formData.descripcion ">
+                <input type="text" class="form-control input-lg text-center" placeholder="Escriba una breve reseña de la propiedad" id="tipo"                                            
+                [(ngModel)]="model.descripcion" 
+                name="descripcion"
+                #descripcion="ngModel" >
             </div>
-            <div class="my-2">
-                <label for="tipo ">Tipo</label>
-                <input type="text " class="form-control input-lg text-center " placeholder="Describa el tipo de inmueble " ng-model="formData.tipo ">
+            <div class="form-group">
+                <label for="tipo">Tipo</label>
+                <select 
+                class="form-control" 
+                id="tipo"                                            
+                [(ngModel)]="model.tipo" 
+                name="tipo"
+                #tipo="ngModel"                
+                >
+                <option *ngFor="let tipo of tipos" [value]="tipo">{{tipo}}</option>
+              </select>
             </div>
-            <div class="my-2">
-                <label for="ubicacion ">Ubicación</label>
-                <input type="objectid " class="form-control input-lg text-center " placeholder="Indique una ubicacion " ng-model="formData.ubicacion ">
+            <div class="form-group">
+                <label for="tipo">Ubicacion</label>
+                <select 
+                class="form-control" 
+                id="ubicacion"                                            
+                [(ngModel)]="model.ubicacion" 
+                name="ubicacion"
+                #ubicacion="ngModel"                
+                >
+                <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ciudad}}</option>
+              </select>
             </div>
             <div class="my-2">
                 <label for="habitaciones ">Número de habitaciones</label>
-                <input type="int32 " class="form-control input-lg text-center " placeholder="Indique número de habitaciones " ng-model="formData.habitaciones ">
+                <input
+                    type="text"
+                    class="form-control input-filtro"                    
+                    id="habitaciones"
+                    [(ngModel)]="model.habitaciones"
+                    name="habitaciones"
+                    #habitaciones="ngModel" 
+                    aria-label="habitaciones"
+                    
+                    />
             </div>
-            <div class="my-2">
-                <label for="estacionamiento ">Estacionamiento</label>
-                <input type="boolean " class="form-control input-lg text-center " placeholder="Tiene estacionamiento la propiedad? " ng-model="formData.estacionamiento ">
+            <div class="form-group">
+                <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="false"
+                      id="estacionamiento"
+                      [(ngModel)]="model.estacionamiento"
+                      name="estacionamiento"
+                      #estacionamiento="ngModel"                       
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Cuenta con estacionamiento
+                    </label>
+                  </div>                           
             </div>
             <div class="my-2">
                 <label for="imagenes ">Imagenes</label>
-                <input type="file " class="form-control input-lg text-center " placeholder="CHOOSEFILE " ng-model="formData.ubicaccion ">
+                <input type="file" class="form-control input-lg text-center ">
             </div>
             <div class="my-2">
                 <label for="precio ">Precio</label>
-                <input type="int64 " class="form-control input-lg text-center " placeholder="Indique precio de la propiedad " ng-model="formData.precio ">
+                <input
+                    type="text"
+                    class="form-control input-filtro"                    
+                    id="precio"
+                    [(ngModel)]="model.precio"
+                    name="precio"
+                    #precio="ngModel" 
+                    aria-label="precio"
+                    
+                    />
             </div>
 
         </div>
-        <button class="btn btn-primary btn-lg " ng-click="RegistrarInmueble() ">Registrar</button>
+        <button class="btn btn-primary" (click)="registrar(RegistroPropiedad)">Registrar</button>
+        <div *ngIf='fieldAlert'>
+            <p style='color:red'>
+                Debe completar todos los campos
+            </p>
+        </div>
     </form>
 </div>
 <app-footer></app-footer>
