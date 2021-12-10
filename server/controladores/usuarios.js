@@ -45,6 +45,7 @@ const traerPorId = async (req,res) => {
     }
   }
 
+
 const editar = async (req,res) => {
   try{    
     const {_id} = req.body;            
@@ -71,4 +72,6 @@ const eliminar = async (req,res) => {
   }     
 } 
 
+
   module.exports = {traerTodos, traerPorId, traerPorUserId, crear, editar, eliminar}
+

@@ -1,0 +1,60 @@
+<html ng-app="QuickstartersApp" id="QuickstartersApp">
+ <head>
+     <meta http-equiv="Content-Type" charset="utf-8" content="text/html">
+     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    
+
+    <title>Quickstarters Colombia - Bienes Raíces, Casas en venta y renta, Departamentos en venta y renta, Agentes y Asesoría inmobiliaria</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="./main.js"></script>
+    <script src="./estilos.css"></script>
+
+</head>
+ <body ng-controller="myController">
+     {{msg}}
+           <a href="javascript:;" id="lbtnTest"> Llamar </a>
+
+
+
+           <form>
+            <div class="form-group">
+                <label for="text">descripcion</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Digite la descripción del inmueble" id="cedula" ng-model="formData.descripcion">
+                <label for="text">tipo</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Digite el tipo de inmueble" ng-model="formData.tipo">
+                <label for="objid">ubicación</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Inserte datos de ubicacion del inmueble" ng-model="formData.ubicacion">
+                <label for="valor">habitaciones</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Indique número de habitaciones" ng-model="formData.habitaciones">
+                <label for="bolean">estacionamiento</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Indique si/no hay estacionamiento" ng-model="formData.estacionamiento">
+                <label for="text">imagenes</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="suba las imagenes" ng-model="formData.imagenes">
+                <label for="valor">precio</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Ingrese el valor en USD" ng-model="formData.precio">
+
+
+
+
+                {{todos}}
+
+            
+            </div>
+             <div class="form-group">
+                <label for="text">user_id</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="ingrese el correo electronico" id="user_id" ng-model="formData.user_id">
+                <label for="text">password</label><br>
+                <input type="text" class="form-control input-lg text-center" placeholder="Digite el password" ng-model="formData.password">
+                
+                {{todos}}
+
+            
+            </div>
+            <button class="btn btn-primary btn-lg" ng-click="createTodo()">Añadir</button>
+        </form>
+ </body>
+ </html>
+ 
+ 
+
