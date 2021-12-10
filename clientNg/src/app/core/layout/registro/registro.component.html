@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+
+    <div class="encabezado">
+        <h2> FORMULARIO DE REGISTRO </h2>
+         <p>
+           ESTO ES UN APARTADO IMPORTANTE PARA HACER EL REGISTRO DE SU IDENTIDAD
+         </p>
+         
+    </div>
+    
+    <div class="contenedor" style='height:530px'>
+    <form (ngSubmit)="onSubmit()" #RegistroUsuario="ngForm">
+    <div class='input-field'>
+      <label for="user_id">Cédula</label><br>
+      <input type="text" id="user_id"
+      [(ngModel)]="model.user_id" 
+      name="user_id"
+      #user_id="ngModel"/>
+    </div>
+    <div class='input-field'>
+      <label for="password">Contraseña</label><br>
+      <input type="text" id="password"
+      [(ngModel)]="model.password" 
+      name="password"
+      #password="ngModel" />
+    </div>
+    <div class='input-field'>
+      <label for="email">Correo electrónico</label><br>
+      <input type="text" id="email"
+      [(ngModel)]="model.email" 
+      name="email"
+      #email="ngModel" />
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary" (click)="register(RegistroUsuario)">Registrarme</button>                                     
+    </div>
+    <div [hidden]='hidden'>
+      <p style='color:red'>Debe completar todos los campos</p>
+    </div>
+    <div>
+      <label style='margin-right:10px'>Acepta las políticas de privacidad </label>
+      <input type="checkbox" id="acepta" value="si"/>
+    </div>
+    </form>
+</div>    
+
+
+<app-footer></app-footer>

@@ -1,24 +1,16 @@
 const mongoose = require('mongoose');
 
-const propiedadesSchema = new mongoose.Schema({
+const ubicacionSchema = new mongoose.Schema({
     barrio: {
-        type: String,
-        require: true,
-        trim: true
-    },
-    direccion: {
-        type: String,
-        require: true,
+        type: String,        
         trim: true
     },
     estrato: {
-        type: Number,
-        require: true,
+        type: Number,        
         trim: true
     },
     zona: {
-        type: String,
-        require: true,
+        type: String,        
         trim: true
     },
     ciudad: {
@@ -28,11 +20,10 @@ const propiedadesSchema = new mongoose.Schema({
     },
     
     codigo_postal: {
-        type: Number,
-        require: true,
+        type: Number,        
         trim: true
     },
     
 });
 
-module.exports = mongoose.model('ubicacion', ubicacionSchema);
+module.exports = mongoose.model('ubicaciones', ubicacionSchema);

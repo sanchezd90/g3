@@ -1,0 +1,105 @@
+<div class="card mx-auto my-5 rounded-3 filtro">
+    <h5 class="card-title mx-3 my-3">Filtrar</h5>
+    <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #FiltroPropiedades="ngForm">
+            
+            <div class="form-group">
+                <label for="tipo">Ciudad</label>
+                <select 
+                class="form-control" 
+                id="ciudad"                                            
+                [(ngModel)]="model.ciudad" 
+                name="ciudad"
+                #ciudad="ngModel"                
+                >
+                <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ciudad}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo</label>
+                <select 
+                class="form-control" 
+                id="tipo"                                            
+                [(ngModel)]="model.tipo" 
+                name="tipo"
+                #tipo="ngModel"                
+                >
+                <option *ngFor="let tipo of tipos" [value]="tipo">{{tipo}}</option>
+              </select>
+            </div>
+            <div class="form-group">                
+                <label for="habitaciones" class="form-label">Habitaciones</label>
+                <div class="d-flex justify-content-around">
+                    <input
+                    type="text"
+                    class="form-control input-filtro"
+                    placeholder="min"
+                    id="habitacionesMin"
+                    [(ngModel)]="model.habitacionesMin"
+                    name="habitacionesMin"
+                    #habitacionesMin="ngModel" 
+                    aria-label="habitacionesMin"
+                    
+                    />
+                    <input
+                    type="text"
+                    class="form-control input-filtro"
+                    placeholder="max"
+                    id="habitacionesMax"
+                    [(ngModel)]="model.habitacionesMax"
+                    name="habitacionesMax"
+                    #habitacionesMax="ngModel" 
+                    aria-label="habitacionesMax"
+                    
+                    />
+                </div>
+            </div>                
+            <div class="form-group">                
+                <label for="precio" class="form-label">Precio</label>
+                <div class="d-flex justify-content-around">
+                    <input
+                    type="text"
+                    class="form-control input-filtro"
+                    placeholder="min"
+                    id="precio-min"
+                    [(ngModel)]="model.precioMin"
+                    name="precioMin"
+                    #precioMin="ngModel" 
+                    aria-label="precioMin"
+                    
+                    />
+                    <input
+                    type="text"
+                    class="form-control input-filtro"
+                    placeholder="max"
+                    id="precio-max"
+                    [(ngModel)]="model.precioMax"
+                    name="precioMax"
+                    #precioMax="ngModel" 
+                    aria-label="precioMax"
+                    
+                    />
+                </div>
+            </div>                            
+            <div class="form-group">
+                <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value="false"
+                      id="estacionamiento"
+                      [(ngModel)]="model.estacionamiento"
+                      name="estacionamiento"
+                      #estacionamiento="ngModel"                       
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Cuenta con estacionamiento
+                    </label>
+                  </div>                           
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="filter(FiltroPropiedades)">Filtrar</button>                                     
+            <button type="button" class="btn btn-warning" (click)="reset()">Eliminar filtro</button>                                     
+        </form>
+      
+    </div>
+  </div>

@@ -1,0 +1,46 @@
+
+.contenedor{    
+    width: 100%;
+    max-width: 200%;
+    height: 200%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+.imagen{
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+.encabezado{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+.seccion2{        
+    width: 100%;
+    max-width: 100%;
+    height: 50%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+.titulo2{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    color:blanchedalmond
+}
+.input-field {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.btn-primary {
+    background-color:#f50;
+    border-color: #f50
+}
+

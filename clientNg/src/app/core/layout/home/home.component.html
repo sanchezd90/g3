@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div class="container d-flex" style='min-height: 620px'>
+  <div class="col-3">
+    <app-filtro-propiedades (nuevaBusqueda)="updateProps($event)">      
+    </app-filtro-propiedades>
+</div>
+<div class="col-9">
+  <div class="mx-5 my-5">
+    <div class="card my-3">        
+        <app-propiedades 
+        *ngFor="let prop of propiedades"
+        [prop]="prop">
+      </app-propiedades>
+      <!-- <h4 [hidden]="hideNoResults">No hay resultados para esta búsqueda</h4> -->
+      </div>
+  </div>
+      
+</div>
+</div>
+<app-footer></app-footer>
