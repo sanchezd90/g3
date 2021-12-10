@@ -31,7 +31,7 @@
                 name="ubicacion"
                 #ubicacion="ngModel"                
                 >
-                <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ciudad}}</option>
+                <option *ngFor="let ubicacion of ubicaciones" [value]="ubicacion._id">{{ubicacion.barrio}}-{{ubicacion.ciudad}}</option>
               </select>
             </div>
             <div class="my-2">
