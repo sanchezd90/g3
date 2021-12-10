@@ -40,4 +40,12 @@ body
     vertical-align: middle;
     color:blanchedalmond
 }
+.input-field {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.btn-primary {
+    background-color:#f50;
+    border-color: #f50
+}
 
