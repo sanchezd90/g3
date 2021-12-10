@@ -28,8 +28,7 @@ const propiedadSchema = new mongoose.Schema({
     },
     
     imagenes: {
-        type: String,
-        required: true,
+        type: String,        
         trim: true
     },
     precio: {
