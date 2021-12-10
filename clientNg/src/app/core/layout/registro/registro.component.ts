@@ -17,13 +17,28 @@ export class RegistroComponent implements OnInit {
   model = new Usuario('','','');
 
   submitted = false;
+  hidden = true;
+
 
   onSubmit() { this.submitted = true; }
 
-  register(form:any): void {
-    const {user_id, password, email} = form.controls                
-  }
-
-  
+  async register(form:any) {
+    const {user_id, password, email} = form.controls
+    if(user_id.value==="" || password.value==="" || email.value===""){
+      this.hidden=false                
+    }else{
+      this.hidden=true
+      try{      
+        const response = await this.service.crear({
+          user_id:user_id.value,
+          password:password.value,
+          email:email.value  
+        });
+        console.log(response)    
+      }catch (error:any) {
+        console.log(error)    
+      }      
+    }
+  }  
 
 }

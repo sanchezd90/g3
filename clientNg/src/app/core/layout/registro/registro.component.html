@@ -34,6 +34,9 @@
     <div>
       <button type="submit" class="btn btn-primary" (click)="register(RegistroUsuario)">Registrarme</button>                                     
     </div>
+    <div [hidden]='hidden'>
+      <p style='color:red'>Debe completar todos los campos</p>
+    </div>
     <div>
       <label style='margin-right:10px'>Acepta las políticas de privacidad </label>
       <input type="checkbox" id="acepta" value="si"/>
