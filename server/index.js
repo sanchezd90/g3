@@ -18,7 +18,7 @@ app.use(cors(corsOptions))
 
 app.use(express.json({ extended: true }));
 
-const PORT = process.env.SERVER_PORT || 4000
+const PORT = 4000
 
 app.use('/api/propiedades',require('./routes/propiedades'));
 app.use('/api/usuarios',require('./routes/usuarios'));
