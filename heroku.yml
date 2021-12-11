@@ -1,4 +1,4 @@
 build:
   docker:
-    web_server: web/server/dockerfile
-    web_client: web/clientNg/dockerfile
+    web_server: server/dockerfile
+    web_client: clientNg/dockerfile
