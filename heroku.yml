@@ -2,5 +2,3 @@ build:
   docker:
     web_server: web/server/dockerfile
     web_client: web/clientNg/dockerfile
-run:
-  web: bundle exec puma -C config/puma.rb
