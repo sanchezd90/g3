@@ -14,7 +14,11 @@ Fernando Buitrago - Tester
 
 Juan David Jaramillo - Administrador 
 
-Para correr la aplicación se debe:
+**Al clonar el proyecto por primera vez se deben instalar todas las dependencias**
+cd client
+npm i
+
+**Para correr la aplicación se debe:**
 1. Correr el servidor de la API 
 cd server
 npm start
