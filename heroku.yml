@@ -1,4 +1,4 @@
 build:
   docker:
     server: server/Dockerfile
-    clientNg: clientNg/Dockerfile
+    client: clientNg/Dockerfile
