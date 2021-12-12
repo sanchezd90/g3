@@ -33,3 +33,4 @@ docker-compose up -d --build
 2. Luego se levanta la imagen
 docker-compose up
 
+**El cliente corre de forma local en: localhost:4200**
