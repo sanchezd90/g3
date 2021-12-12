@@ -13,3 +13,19 @@ Juan Sebastian Sarmiento - Diseñador UI
 Fernando Buitrago - Tester
 
 Juan David Jaramillo - Administrador 
+
+Para correr la aplicación se debe:
+1. Correr el servidor de la API 
+cd server
+npm start
+
+2. Correr el servidor del front
+cd client
+npm start
+
+También se puede correr con docker:
+1. Primero se hace el build (ejecutar desde la carpeta raíz)
+docker-compose up -d --build   
+2. Luego se levanta la imagen
+docker-compose up
+
